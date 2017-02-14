@@ -103,12 +103,12 @@ function createPaddle(){
 }
 
 function updatePaddle(){
-  paddle.x = game.input.x;
-
-  if (paddle.x < 24){
-    paddle.x = 24;
-  }else if (paddle.x > game.width - 24){
-    paddle.x = game.width - 24;
+  if(game.input.x <= paddle.width/2){
+    paddle.x = paddle.width/2;
+  }else if(game.input.x >= game.width - paddle.width/2){
+    paddle.x = game.width - paddle.width/2;
+  }else{
+    paddle.x = game.input.x;
   }
 }
 
